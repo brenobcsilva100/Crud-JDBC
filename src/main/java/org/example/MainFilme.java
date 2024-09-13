@@ -5,14 +5,11 @@ import org.example.persistence.dao.FilmeDao;
 import org.example.persistence.model.Filme;
 
 import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.util.ArrayList;
 import java.util.List;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-public class Main {
+public class MainFilme {
 
     private static Connection con = ConnectionFactory.getConnection();
 
@@ -51,9 +48,9 @@ public class Main {
 
     private static void alterar() {
         Filme filme = new Filme();
-        filme.setId(1);
-        filme.setNome("Titanic alterado");
-        filme.setDescricao("Rico joga os probes na agua alterado");
+        filme.setId(2);
+        filme.setNome("As Branquelas");
+        filme.setDescricao(", Data truncation: Data too long for column 'descricao' at row 1");
 
         FilmeDao filmeDao = new FilmeDao();
         filmeDao.alterar(filme);
